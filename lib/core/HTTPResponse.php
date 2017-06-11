@@ -1,5 +1,5 @@
 <?php
-namespace Billet_simple_pour_l_Alaska;
+namespace core;
 
 class HTTPResponse extends ApplicationComponent
 {
