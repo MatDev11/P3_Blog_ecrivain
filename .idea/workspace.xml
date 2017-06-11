@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82c8132b-49e5-452c-8ed6-5108f10d0385" name="Default" comment="" />
+    <list default="true" id="82c8132b-49e5-452c-8ed6-5108f10d0385" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Backend/Config/app.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Backend/Config/routes.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/core/Hydrator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,17 +20,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NewsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/NewsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-577">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/Views/show.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -35,8 +30,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insertComment.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/Views/insertComment.php">
+      <file leaf-file-name="BackendApplication.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Backend/BackendApplication.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConnexionController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Backend/Modules/Connexion/ConnexionController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#48#73#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -45,19 +62,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommentsManagerPDO.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/vendors/Model/CommentsManagerPDO.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Backend/Modules/News/Views/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1421100842000" expanded="true" signature="174:263" ph="INSERT INTO comments... " />
-                <marker date="1421100842000" expanded="true" signature="576:608" ph="DELETE FROM " />
-                <marker date="1421100842000" expanded="true" signature="693:727" ph="DELETE FROM " />
-                <marker date="1421100842000" expanded="true" signature="977:1048" ph="SELECT id, n... " />
-                <marker date="1421100842000" expanded="true" signature="1473:1544" ph="UPDATE comme... " />
-                <marker date="1421100842000" expanded="true" signature="1806:1867" ph="SELECT id, n... comments" />
-              </folding>
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Backend/Templates/layout.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FrontendApplication.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Frontend/FrontendApplication.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Backend/Config/app.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hydrator.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/core/Hydrator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,65 +117,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="335">
               <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BackController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/core/BackController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsManager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/vendors/Model/NewsManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#24#42#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewsManagerPDO.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/vendors/Model/NewsManagerPDO.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-563">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1421100366000" expanded="true" signature="163:274" ph="INSERT INTO news... " />
-                <marker date="1421100366000" expanded="true" signature="537:562" ph="SELECT COUNT... news" />
-                <marker date="1421100366000" expanded="true" signature="642:670" ph="DELETE FROM " />
-                <marker date="1421100366000" expanded="true" signature="758:840" ph="SELECT id, a... news" />
-                <marker date="1421100366000" expanded="true" signature="1456:1536" ph="SELECT id, a... news" />
-                <marker date="1421100366000" expanded="true" signature="2028:2130" ph="UPDATE news " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Comment.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/vendors/Entity/Comment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Frontend/Config/routes.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -148,6 +139,7 @@
         <option value="$PROJECT_DIR$/lib/core/BackController.php" />
         <option value="$PROJECT_DIR$/Web/bootstrap.php" />
         <option value="$PROJECT_DIR$/lib/core/PDOFactory.php" />
+        <option value="$PROJECT_DIR$/App/Backend/BackendApplication.php" />
       </list>
     </option>
   </component>
@@ -302,11 +294,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Frontend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Templates" />
+              <option name="myItemId" value="Backend" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -324,7 +312,29 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Frontend" />
+              <option name="myItemId" value="Backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Blog_Billet_simple_pour_l_Alaska" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Blog_Billet_simple_pour_l_Alaska" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backend" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -332,7 +342,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="News" />
+              <option name="myItemId" value="Connexion" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -350,37 +360,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Frontend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="News" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Blog_Billet_simple_pour_l_Alaska" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Blog_Billet_simple_pour_l_Alaska" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Frontend" />
+              <option name="myItemId" value="Backend" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -400,11 +380,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\lib\core" />
+      <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\App\Backend" />
       <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\lib\vendors\Model" />
       <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\App\Frontend\Modules\News\Views" />
       <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\lib\vendors\Entity" />
-      <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\App\Frontend\Modules\News" />
-      <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\Web" />
     </key>
   </component>
   <component name="RunManager">
@@ -472,12 +452,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496912785844</updated>
-      <workItem from="1496912787031" duration="16735000" />
+      <workItem from="1496912787031" duration="18781000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16735000" />
+    <option name="totallyTimeSpent" value="18781000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1091" height="1047" extended-state="0" />
@@ -625,14 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Frontend/FrontendApplication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Frontend/Templates/layout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -647,14 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -788,6 +752,72 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/Views/show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Modules/News/Views/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Templates/layout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Frontend/FrontendApplication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/BackendApplication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Modules/Connexion/ConnexionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#73#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Backend/Config/app.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/core/Hydrator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
