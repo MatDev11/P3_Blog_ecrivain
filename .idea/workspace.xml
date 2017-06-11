@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82c8132b-49e5-452c-8ed6-5108f10d0385" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/core/PDOFactory.php" afterPath="$PROJECT_DIR$/lib/core/PDOFactory.php" />
-    </list>
+    <list default="true" id="82c8132b-49e5-452c-8ed6-5108f10d0385" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,41 +15,58 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Frontend/Config/app.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PDOFactory.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/core/PDOFactory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NewsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/NewsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-192">
+            <state relative-caret-position="-577">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="show.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/Views/show.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insertComment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/Views/insertComment.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentsManagerPDO.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/vendors/Model/CommentsManagerPDO.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1421100842000" expanded="true" signature="174:263" ph="INSERT INTO comments... " />
+                <marker date="1421100842000" expanded="true" signature="576:608" ph="DELETE FROM " />
+                <marker date="1421100842000" expanded="true" signature="693:727" ph="DELETE FROM " />
+                <marker date="1421100842000" expanded="true" signature="977:1048" ph="SELECT id, n... " />
+                <marker date="1421100842000" expanded="true" signature="1473:1544" ph="UPDATE comme... " />
+                <marker date="1421100842000" expanded="true" signature="1806:1867" ph="SELECT id, n... comments" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentsManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/vendors/Model/CommentsManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -62,16 +77,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="925">
               <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/Views/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsManagerPDO.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NewsManagerPDO.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/vendors/Model/NewsManagerPDO.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-563">
@@ -106,8 +111,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="News.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/vendors/Entity/News.php">
+      <file leaf-file-name="Comment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/vendors/Entity/Comment.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -395,9 +400,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\lib\vendors\Model" />
       <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\App\Frontend\Modules\News\Views" />
       <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\lib\vendors\Entity" />
-      <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\lib\vendors\Model" />
       <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\App\Frontend\Modules\News" />
       <recent name="C:\wamp64\www\Blog_Billet_simple_pour_l_Alaska\Web" />
     </key>
@@ -467,18 +472,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496912785844</updated>
-      <workItem from="1496912787031" duration="14800000" />
+      <workItem from="1496912787031" duration="16735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14800000" />
+    <option name="totallyTimeSpent" value="16735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1091" height="1047" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33365664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33365664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -710,22 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/NewsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/Views/show.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/vendors/Model/NewsManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-323">
@@ -748,6 +737,61 @@
             <marker date="1421100366000" expanded="true" signature="1456:1536" ph="SELECT id, a... news" />
             <marker date="1421100366000" expanded="true" signature="2028:2130" ph="UPDATE news " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/vendors/Entity/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/Views/insertComment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/vendors/Model/CommentsManagerPDO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1421100842000" expanded="true" signature="174:263" ph="INSERT INTO comments... " />
+            <marker date="1421100842000" expanded="true" signature="576:608" ph="DELETE FROM " />
+            <marker date="1421100842000" expanded="true" signature="693:727" ph="DELETE FROM " />
+            <marker date="1421100842000" expanded="true" signature="977:1048" ph="SELECT id, n... " />
+            <marker date="1421100842000" expanded="true" signature="1473:1544" ph="UPDATE comme... " />
+            <marker date="1421100842000" expanded="true" signature="1806:1867" ph="SELECT id, n... comments" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/NewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-577">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/vendors/Model/CommentsManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Frontend/Modules/News/Views/show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
