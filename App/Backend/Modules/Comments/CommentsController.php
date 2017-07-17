@@ -3,9 +3,9 @@ namespace App\Backend\Modules\Comments;
 
 use Entity\Comment;
 use FormBuilder\CommentFormBuilder;
-use OCFram\BackController;
-use OCFram\FormHandler;
-use OCFram\HTTPRequest;
+use core\BackController;
+use core\FormHandler;
+use core\HTTPRequest;
 
 
 class CommentsController extends BackController

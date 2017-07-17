@@ -19,15 +19,15 @@
           href="http://localhost/test/Web/bootstrap/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css"
-          href="http://localhost/test/Web/bootstrap/css/bootstrap-responsive.min.css">
+          href="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/bootstrap/css/bootstrap-responsive.min.css">
     <!-- Theme CSS -->
     <link rel="stylesheet" type="text/css"
-          href="http://localhost/test/Web/css/clean-blog.min.css">
+          href="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/css/clean-blog.min.css">
     <link rel="stylesheet" type="text/css"
           href="http://localhost/test/Web/css/style.css">
 
     <!-- Custom Fonts -->
-    <link href="http://localhost/test/Web/font-awesome/css/font-awesome.min.css"
+    <link href="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/font-awesome/css/font-awesome.min.css"
           rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'>
@@ -56,20 +56,20 @@
                 <span class="sr-only">Toggle navigation</span>
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="http://localhost/test/web/">Blog Billet simple pour l'Alaska</a>
+            <a class="navbar-brand" href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/">Blog Billet simple pour l'Alaska</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="http://localhost/test/web/">Acceuil</a>
+                    <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/">Acceuil</a>
                 </li>
                 <li>
-                    <a href="http://localhost/test/web/admin/">Administration</a>
+                    <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/">Administration</a>
                 </li>
                 <li>
-                    <a href="http://localhost/test/web/index.php?p=users.login">Connexion</a>
+                    <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/index.php?p=users.login">Connexion</a>
                 </li>
 
 
@@ -83,7 +83,7 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
 <header class="intro-header"
-        style="background-image: url('http://localhost/test/Web/img/alaska.jpg')">
+        style="background-image: url('http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/img/alaska.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -109,11 +109,11 @@
                 <li>
                     <a>Administration:</a>
                 <li>
-                    <a href="http://localhost/test/web/admin/">Articles</a>
+                    <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/">Articles</a>
                 </li>
 
                 <li>
-                    <a href="http://localhost/test/web/admin/comments/">Commentaires</a>
+                    <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/comments/">Commentaires</a>
                 </li>
 
             </ul>
@@ -166,23 +166,23 @@
 </footer>
 
 <!-- jQuery -->
-<script src="http://localhost/test/Web/jquery/jquery.min.js"></script>
+<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/jquery/jquery.min.js"></script>
 
-<script src="http://localhost/test/Web/js/tinymce/js/tinymce/tinymce.js" type="text/javascript"></script>
+<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/js/tinymce/js/tinymce/tinymce.js" type="text/javascript"></script>
 <script>tinymce.init({ selector:'textarea#editable', plugins: "table, fullpage",theme_advanced_buttons3_add : "fullpage, tablecontrols"
 
     });</script>
 <!-- Bootstrap Core JavaScript -->
-<script src="http://localhost/test/Web/bootstrap/js/bootstrap.min.js"></script>
+<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Contact Form JavaScript -->
-<script src="http://localhost/test/Web/js/jqBootstrapValidation.js"></script>
-<script src="http://localhost/test/Web/js/contact_me.js"></script>
+<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/js/jqBootstrapValidation.js"></script>
+<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/js/contact_me.js"></script>
 
 <!-- Theme JavaScript -->
-<script src="http://localhost/test/Web/js/clean-blog.min.js"></script>
-<script src="http://localhost/test/Web/js/app.js"></script>
-<script src="http://localhost/test/Web/js/bootstrap-paginator.min.js"></script>
+<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/js/clean-blog.min.js"></script>
+<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/js/app.js"></script>
+<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/js/bootstrap-paginator.min.js"></script>
 </body>
 
 </html>

@@ -24,10 +24,10 @@
                 <td><?= $comment['auteur']?></td>
                 <td>le <?= date('d/m/y à H\hi', strtotime($comment['date']));?></td>
              
-                <td><a class="btn btn-info btn-xs" href="http://localhost/test/web/admin/comment-update-<?= $comment['id']?>.html"><span class="glyphicon glyphicon-edit"></span></a>
+                <td><a class="btn btn-info btn-xs" href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/comment-update-<?= $comment['id']?>.html"><span class="glyphicon glyphicon-edit"></span></a>
 
 
-                <form action="http://localhost/test/web/admin/comment-delete-<?= $comment['id']?>.html" method="post" style="display:inline-block">
+                <form action="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/comment-delete-<?= $comment['id']?>.html" method="post" style="display:inline-block">
                     <input  type="hidden" name="id" value="<?= $comment['id']?>">
                     <input type="hidden" name="id_parent" value="<?= $comment['id_prent']?>">
                     <input  type="hidden" name="depth" value="<?=$comment['depth']?>">

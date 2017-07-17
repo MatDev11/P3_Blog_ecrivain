@@ -3,43 +3,69 @@ namespace core;
 
 class StringField extends Field
 {
-  protected $maxLength;
-  
-  public function buildWidget()
-  {
-    $widget = '';
-    
-    if (!empty($this->errorMessage))
+    protected $maxLength;
+    protected $class;
+    protected $id;
+
+    public function buildWidget()
     {
-      $widget .= $this->errorMessage.'<br />';
+        $widget = '';
+
+        if (!empty($this->errorMessage))
+        {
+            $widget .= $this->errorMessage.'<br />';
+        }
+
+        $widget .= '<label>'.$this->label.'</label>
+    <input  type="text" name="'.$this->name.'"';
+
+        if (!empty($this->id)) {
+            $widget .= ' id="' . $this->id . '"';
+        }
+
+        if (!empty($this->class)) {
+            $widget .= ' class="' . $this->class . '"';
+        }
+
+        if (!empty($this->value))
+        {
+            $widget .= ' value="'.htmlspecialchars($this->value).'"';
+        }
+
+        if (!empty($this->maxLength))
+        {
+            $widget .= ' maxlength="'.$this->maxLength.'"';
+        }
+
+        return $widget .= ' />';
     }
-    
-    $widget .= '<label>'.$this->label.'</label><input type="text" name="'.$this->name.'"';
-    
-    if (!empty($this->value))
+
+    public function setClass($class)
     {
-      $widget .= ' value="'.htmlspecialchars($this->value).'"';
+        $this->class = $class;
+
     }
-    
-    if (!empty($this->maxLength))
+
+    public function setId($id)
     {
-      $widget .= ' maxlength="'.$this->maxLength.'"';
+        $this->id = $id;
+
     }
-    
-    return $widget .= ' />';
-  }
-  
-  public function setMaxLength($maxLength)
-  {
-    $maxLength = (int) $maxLength;
-    
-    if ($maxLength > 0)
+
+    public function setMaxLength($maxLength)
     {
-      $this->maxLength = $maxLength;
+        $maxLength = (int) $maxLength;
+
+        if ($maxLength > 0)
+        {
+            $this->maxLength = $maxLength;
+        }
+        else
+        {
+            throw new \RuntimeException('La longueur maximale doit être un nombre supérieur à 0');
+        }
     }
-    else
-    {
-      throw new \RuntimeException('La longueur maximale doit être un nombre supérieur à 0');
-    }
-  }
+
+
+
 }
