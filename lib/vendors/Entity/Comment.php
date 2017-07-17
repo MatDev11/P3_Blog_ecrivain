@@ -5,66 +5,111 @@ use \core\Entity;
 
 class Comment extends Entity
 {
-  protected $news,
-            $auteur,
-            $contenu,
-            $date;
 
-  const AUTEUR_INVALIDE = 1;
-  const CONTENU_INVALIDE = 2;
+    protected $news,
+        $auteur,
+        $contenu,
+        $date,
+        $idParent,
+        $depth,
+        $report;//,
+    //$children=[];
 
-  public function isValid()
-  {
-    return !(empty($this->auteur) || empty($this->contenu));
-  }
+    const AUTEUR_INVALIDE = 1;
+    const CONTENU_INVALIDE = 2;
 
-  public function setNews($news)
-  {
-    $this->news = (int) $news;
-  }
-
-  public function setAuteur($auteur)
-  {
-    if (!is_string($auteur) || empty($auteur))
+    public function isValid()
     {
-      $this->erreurs[] = self::AUTEUR_INVALIDE;
+        return !(empty($this->auteur) || empty($this->contenu));
     }
 
-    $this->auteur = $auteur;
-  }
-
-  public function setContenu($contenu)
-  {
-    if (!is_string($contenu) || empty($contenu))
+    public function setNews($news)
     {
-      $this->erreurs[] = self::CONTENU_INVALIDE;
+        $this->news = (int)$news;
     }
 
-    $this->contenu = $contenu;
-  }
+    public function setAuteur($auteur)
+    {
+        if (!is_string($auteur) || empty($auteur)) {
+            $this->erreurs[] = self::AUTEUR_INVALIDE;
+        }
 
-  public function setDate(\DateTime $date)
-  {
-    $this->date = $date;
-  }
+        $this->auteur = $auteur;
+    }
 
-  public function news()
-  {
-    return $this->news;
-  }
+    public function setContenu($contenu)
+    {
+        if (!is_string($contenu) || empty($contenu)) {
+            $this->erreurs[] = self::CONTENU_INVALIDE;
+        }
 
-  public function auteur()
-  {
-    return $this->auteur;
-  }
+        $this->contenu = $contenu;
+    }
 
-  public function contenu()
-  {
-    return $this->contenu;
-  }
+    public function setIdParent($idParent)
+    {
+        return $this->idParent = $idParent;
+    }
 
-  public function date()
-  {
-    return $this->date;
-  }
+    public function setDepth($depth)
+    {
+        return $this->depth = $depth;
+    }
+
+    public function setReport($report)
+    {
+        return $this->report = $report;
+    }
+
+
+    public function setDate(\DateTime $date)
+    {
+        $this->date = $date;
+    }
+
+    /* public function setChildren($children)
+     {
+         return $this->children = $children;
+     }*/
+
+    public function news()
+    {
+        return $this->news;
+    }
+
+    public function auteur()
+    {
+        return $this->auteur;
+    }
+
+    public function contenu()
+    {
+        return $this->contenu;
+    }
+
+    public function date()
+    {
+        return $this->date;
+    }
+
+    public function idParent()
+    {
+        return $this->idParent;
+    }
+
+    public function depth()
+    {
+        return $this->depth;
+    }
+
+    public function report()
+    {
+        return $this->report;
+    }
+
+    /* public function children()
+     {
+         return $this->children;
+     }*/
+
 }
