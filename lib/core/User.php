@@ -47,4 +47,10 @@ class User
   {
     $_SESSION['flash'] = $value;
   }
+
+    public function disconect()
+    {
+        $_SESSION['auth'] = false;
+    }
+
 }

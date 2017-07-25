@@ -1,11 +1,11 @@
 <?php
 namespace App\Backend\Modules\Comments;
 
-use Entity\Comment;
-use FormBuilder\CommentFormBuilder;
 use core\BackController;
 use core\FormHandler;
 use core\HTTPRequest;
+use Entity\Comment;
+use FormBuilder\CommentFormBuilder;
 
 
 class CommentsController extends BackController
@@ -15,7 +15,7 @@ class CommentsController extends BackController
     private function getChildrenIds($comment)
     {
 
-        if(isset($comment->children)) {
+        if (isset($comment->children)) {
             $ids = [];
             foreach ($comment->children as $child) {
                 $ids[] = $child->id();
@@ -29,16 +29,12 @@ class CommentsController extends BackController
 
     public function executeDeleteComment(HTTPRequest $request)
     {
-
-       // $comment = $this->managers->getManagerOf('Comments')->get($_POST['id']);
         $comments = $this->managers->getManagerOf('Comments')->getListOf($_POST['news']);
 
         $comments_by_id = [];
 
-
         foreach ($comments as $comment) {
             $comments_by_id[$comment->id()] = $comment;
-
         }
 
         foreach ($comments as $k => $comment) {
@@ -52,11 +48,11 @@ class CommentsController extends BackController
         $ids = $this->getChildrenIds($comments_by_id[$_POST['id']]);
         $ids[] = $_POST['id'];
 
-       $this->managers->getManagerOf('Comments')->deleteWithChildren($ids);
+        $this->managers->getManagerOf('Comments')->deleteWithChildren($ids);
 
-         $this->app->user()->setFlash('Le commentaire a bien été supprimé !');
+        $this->app->user()->setFlash('Le commentaire a bien été supprimé !');
 
-          $this->app->httpResponse()->redirect('./comments/');
+        $this->app->httpResponse()->redirect('./comments/');
     }
 
     public function executeIndex(HTTPRequest $request)
@@ -84,6 +80,7 @@ class CommentsController extends BackController
             $comment = new Comment([
                 'id' => $request->getData('id'),
                 'auteur' => $request->postData('auteur'),
+                'report' => $request->postData('report'),
                 'contenu' => $request->postData('contenu')
             ]);
         } else {

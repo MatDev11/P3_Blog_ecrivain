@@ -1,7 +1,7 @@
 <h2><?= $title ?></h2>
 
 <p>
-    <a href="http://localhost/test/web/admin/news-insert.html" class="btn btn-primary">Ajouter</a>
+    <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/news-insert.html" class="btn btn-primary">Ajouter</a>
 </p>
 
 <p style="text-align: center">Il y a actuellement <?= $nombreNews ?> news. En voici la liste :</p>

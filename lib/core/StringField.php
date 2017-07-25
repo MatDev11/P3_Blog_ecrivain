@@ -13,7 +13,7 @@ class StringField extends Field
 
         if (!empty($this->errorMessage))
         {
-            $widget .= $this->errorMessage.'<br />';
+            $widget .= '<p class="alert alert-danger">'. $this->errorMessage . '<p />';
         }
 
         $widget .= '<label>'.$this->label.'</label>

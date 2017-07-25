@@ -16,18 +16,18 @@
       <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel="stylesheet">-->
 
     <link rel="stylesheet" type="text/css"
-          href="http://localhost/test/Web/bootstrap/css/bootstrap.min.css">
+          href="<?= $url; ?>/bootstrap/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css"
-          href="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/bootstrap/css/bootstrap-responsive.min.css">
+          href="<?= $url; ?>bootstrap/css/bootstrap-responsive.min.css">
     <!-- Theme CSS -->
     <link rel="stylesheet" type="text/css"
-          href="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/css/clean-blog.min.css">
+          href="<?= $url; ?>css/clean-blog.css">
     <link rel="stylesheet" type="text/css"
-          href="http://localhost/test/Web/css/style.css">
+          href="<?= $url; ?>css/style.css">
 
     <!-- Custom Fonts -->
-    <link href="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/font-awesome/css/font-awesome.min.css"
+    <link href="<?= $url; ?>font-awesome/css/font-awesome.min.css"
           rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'>
@@ -63,15 +63,16 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/">Acceuil</a>
+                    <a href="<?= $url; ?>">Acceuil</a>
                 </li>
                 <li>
-                    <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/">Administration</a>
+                    <a href="<?= $url; ?>admin/">Administration</a>
                 </li>
+                <?php if ($user->isAuthenticated()) { ?>
                 <li>
-                    <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/index.php?p=users.login">Connexion</a>
+                    <a href="<?= $url; ?>admin/disconect/">Déconnexion</a>
                 </li>
-
+                <?php } ?>
 
             </ul>
         </div>
@@ -88,7 +89,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>Billet simple pour l'Alaska</h1>
+                    <h1><?=$titleSite?></h1>
                     <hr class="small">
                     <span class="subheading">Jean Forteroche</span>
                 </div>
@@ -101,7 +102,8 @@
 <!-- Main Content -->
 <div class="container">
     <div class="row">
-        <?php if ($user->isAuthenticated()) { ?>
+
+        <?php if ($name ==='Backend') { ?>
 
 
             <ul class="nav nav-tabs ">
@@ -109,11 +111,11 @@
                 <li>
                     <a>Administration:</a>
                 <li>
-                    <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/">Articles</a>
+                    <a href="<?= $url; ?>admin/">Articles</a>
                 </li>
 
                 <li>
-                    <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/comments/">Commentaires</a>
+                    <a href="<?= $url; ?>admin/comments/">Commentaires</a>
                 </li>
 
             </ul>
@@ -133,56 +135,24 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    <li>
-                        <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                        </a>
-                    </li>
-                </ul>
-                <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+                               <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
             </div>
         </div>
     </div>
 </footer>
 
 <!-- jQuery -->
-<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/jquery/jquery.min.js"></script>
+<script src="<?= $url; ?>jquery/jquery.min.js"></script>
 
-<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/js/tinymce/js/tinymce/tinymce.js" type="text/javascript"></script>
-<script>tinymce.init({ selector:'textarea#editable', plugins: "table, fullpage",theme_advanced_buttons3_add : "fullpage, tablecontrols"
+<script src="<?= $url; ?>js/tinymce/js/tinymce/tinymce.js" type="text/javascript"></script>
 
-    });</script>
 <!-- Bootstrap Core JavaScript -->
-<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- Contact Form JavaScript -->
-<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/js/jqBootstrapValidation.js"></script>
-<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/js/contact_me.js"></script>
+<script src="<?= $url; ?>bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Theme JavaScript -->
-<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/js/clean-blog.min.js"></script>
-<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/js/app.js"></script>
-<script src="http://localhost/Blog_Billet_simple_pour_l_Alaska/Web/js/bootstrap-paginator.min.js"></script>
+<script src="<?= $url; ?>js/clean-blog.min.js"></script>
+<script src="<?= $url; ?>js/app.js"></script>
+<script src="<?= $url; ?>js/bootstrap-paginator.min.js"></script>
 </body>
 
 </html>

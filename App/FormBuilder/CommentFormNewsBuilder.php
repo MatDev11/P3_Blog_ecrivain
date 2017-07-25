@@ -1,13 +1,14 @@
 <?php
 namespace FormBuilder;
 
+
 use \core\FormBuilder;
 use \core\StringField;
 use \core\TextField;
 use \core\MaxLengthValidator;
 use \core\NotNullValidator;
 
-class CommentFormBuilder extends FormBuilder
+class CommentFormNewsBuilder extends FormBuilder
 {
     public function build()
     {
@@ -21,6 +22,7 @@ class CommentFormBuilder extends FormBuilder
                 new NotNullValidator('Merci de spécifier l\'auteur du commentaire'),
             ],
         ]))
+
             ->add(new TextField([
                 'label' => 'Contenu',
                 'name' => 'contenu',
@@ -32,5 +34,7 @@ class CommentFormBuilder extends FormBuilder
                 ],
             ]));
     }
+
+    
 
 }

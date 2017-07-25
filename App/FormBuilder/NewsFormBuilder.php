@@ -14,6 +14,7 @@ class NewsFormBuilder extends FormBuilder
         $this->form->add(new StringField([
             'label' => 'Auteur',
             'name' => 'auteur',
+            'value' => 'Jean Forteroche',
             'class' => 'form-control',
             'maxLength' => 20,
             'validators' => [

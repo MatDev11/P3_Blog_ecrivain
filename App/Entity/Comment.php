@@ -12,7 +12,7 @@ class Comment extends Entity
         $date,
         $idParent,
         $depth,
-        $report;//,
+        $report;
     //$children=[];
 
     const AUTEUR_INVALIDE = 1;
@@ -67,10 +67,6 @@ class Comment extends Entity
         $this->date = $date;
     }
 
-    /* public function setChildren($children)
-     {
-         return $this->children = $children;
-     }*/
 
     public function news()
     {
@@ -107,9 +103,5 @@ class Comment extends Entity
         return $this->report;
     }
 
-    /* public function children()
-     {
-         return $this->children;
-     }*/
 
 }

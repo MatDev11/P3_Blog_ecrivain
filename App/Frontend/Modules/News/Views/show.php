@@ -25,6 +25,7 @@ foreach ($comments as $comment)
 <form method="post" id="form-comment">
     <input type="hidden" name="parent_id" value="0" id="parent_id">
     <input type="hidden" name="id" value="<?= $news['id'] ?>" id="id">
+    <input type="hidden" name="report" value="0" id="reprort">
     <p>
         <?= $form ?>
         <input class="btn btn-primary" type="submit" value="Commenter" />

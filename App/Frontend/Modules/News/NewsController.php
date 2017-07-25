@@ -6,6 +6,7 @@ use \core\HTTPRequest;
 use \Entity\Comment;
 use \FormBuilder\CommentFormBuilder;
 use \core\FormHandler;
+use FormBuilder\CommentFormNewsBuilder;
 
 class NewsController extends BackController
 {
@@ -13,12 +14,14 @@ class NewsController extends BackController
     {
         $nombreNews = $this->app->config()->get('nombre_news');
         $nombreCaracteres = $this->app->config()->get('nombre_caracteres');
+        $url = $this->app->config()->get('url');
 
         // On ajoute une définition pour le titre.
-        $this->page->addVar('titleSite', 'Blog Billet simple pour l\'Alaska');
+
         $this->page->addVar('subtitle', 'Jean Forteroche');
         $this->page->addVar('titlePage', 'Liste des ' . $nombreNews . ' dernières news');
-
+        ////
+        $this->page->addVar('url', $url);
 
         // On récupère le manager des news.
         $manager = $this->managers->getManagerOf('News');
@@ -28,7 +31,8 @@ class NewsController extends BackController
         foreach ($listeNews as $news) {
             if (strlen($news->contenu()) > $nombreCaracteres) {
                 $debut = substr($news->contenu(), 0, $nombreCaracteres);
-                $debut = substr($debut, 0, strrpos($debut, ' ')) . '...';
+                $debut = substr($debut, 0, strrpos($debut, ' '))
+                         .' ... <a href="'.$url.'news-'.$news['id'].'.html">Voir la suite</a>';
 
                 $news->setContenu($debut);
             }
@@ -76,6 +80,7 @@ class NewsController extends BackController
 
     public function executeInsertComment(HTTPRequest $request)
     {
+
         // Si le formulaire a été envoyé.
         if ($request->method() == 'POST') {
 
@@ -95,16 +100,17 @@ class NewsController extends BackController
                 'auteur' => $request->postData('auteur'),
                 'contenu' => $request->postData('contenu'),
                 'idparent' => $parent_id,
-                'report' => 0,
-                'depth' => $depth
+                'depth' => $depth,
+                'report' =>$request->postData('report') ,
             ]);
+           // var_dump($comment);die;
 
         } else {
             $comment = new Comment;
         }
 
 
-        $formBuilder = new CommentFormBuilder($comment);
+        $formBuilder = new CommentFormNewsBuilder($comment);
         $formBuilder->build();
 
         $form = $formBuilder->form();
@@ -128,7 +134,7 @@ class NewsController extends BackController
 
         $this->app->user()->setFlash('Le commentaire a bien été signalé !');
 
-        $this->app->httpResponse()->redirect('news-'.$request->getData('news'));
+        $this->app->httpResponse()->redirect('news-'. $request->getData('slug') . '.html');
 
     }
 }

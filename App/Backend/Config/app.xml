@@ -2,4 +2,6 @@
 <definitions>
   <define var="login" value="admin" />
   <define var="pass" value="mdp" />
+  <define var="url" value="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/" />
+  <define var="titleSite" value="Billet simple pour l'Alaska" />
 </definitions>

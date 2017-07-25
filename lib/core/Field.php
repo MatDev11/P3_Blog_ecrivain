@@ -101,7 +101,7 @@ abstract class Field
   {
     if (is_string($value))
     {
-      $this->value = $value;
+       $this->value = $value;
     }
   }
 }

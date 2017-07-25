@@ -38,5 +38,14 @@ $(document).ready(function () {
         }
     }
     $('#paging').bootstrapPaginator(options);
+
+
+
 })
 
+
+tinymce.init({ selector:'textarea#editable',
+    language: 'fr_FR',
+    entity_encoding : "raw"
+
+});

@@ -14,7 +14,7 @@
     <tbody>
     <?php
     foreach ($listeComments as $comment) { ?>
-        <?php if ($comment['report'] == 1): ?>
+        <?php if ($comment['report'] == true): ?>
             <tr style="color: red;">
         <?php else: ?>
             <tr>
@@ -30,7 +30,7 @@
                 <form action="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/comment-delete-<?= $comment['id']?>.html" method="post" style="display:inline-block">
                     <input  type="hidden" name="id" value="<?= $comment['id']?>">
                     <input type="hidden" name="id_parent" value="<?= $comment['id_prent']?>">
-                    <input  type="hidden" name="depth" value="<?=$comment['depth']?>">
+
                     <input  type="hidden" name="news" value="<?=$comment['news']?>">
                     <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
                 </form>

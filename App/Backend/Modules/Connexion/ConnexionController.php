@@ -26,4 +26,11 @@ class ConnexionController extends BackController
       }
     }
   }
+    public function executeDisconect(HTTPRequest $request)
+    {
+        $this->app->user()->disconect();
+        $this->app->httpResponse()->redirect('http://localhost/Blog_Billet_simple_pour_l_Alaska/web/');
+    }
+
+
 }

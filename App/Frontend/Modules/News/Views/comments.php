@@ -7,7 +7,7 @@
                 <?php if ($comment['depth'] <= 1): ?>
                 <span class="comment-action comment-reply-link"> <a class="reply" data-id="<?= $comment['id'] ?>">Répondre</a></span>
                 <?php endif;?>
-                <span class="comment-action comment-reply-link"> <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/comment-report-<?= $comment['id'] ?>.html">Signaler</a></span>
+                <span class="comment-action comment-reply-link"> <a href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/comment-report-<?= $comment['id']?>.html">Signaler</a></span>
 
             </legend>
             <p><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>

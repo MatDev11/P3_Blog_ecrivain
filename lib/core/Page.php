@@ -23,7 +23,10 @@ class Page extends ApplicationComponent
       throw new \RuntimeException('La vue spécifiée n\'existe pas');
     }
 
+    $url = $this->app->config()->get('url');
     $user = $this->app->user();
+    $name = $this->app->name();
+    $titleSite = $this->app->config()->get('titleSite');
 
     extract($this->vars);
 

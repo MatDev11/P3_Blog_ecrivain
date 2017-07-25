@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <definitions>
   <define var="nombre_news" value="5" />
-  <define var="nombre_caracteres" value="200" />
+  <define var="nombre_caracteres" value="500" />
+  <define var="url" value="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/" />
+  <define var="titleSite" value="Billet simple pour l'Alaska" />
 </definitions>
