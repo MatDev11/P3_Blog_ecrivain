@@ -23,7 +23,10 @@ $appLoader->register();
 
 $modelLoader = new SplClassLoader('Model', __DIR__.'/../App');
 $modelLoader->register();
-
+//**********************************
+$modelLoader = new SplClassLoader('Services', __DIR__.'/../App');
+$modelLoader->register();
+//*************************************
 $entityLoader = new SplClassLoader('Entity', __DIR__.'/../App');
 $entityLoader->register();
 

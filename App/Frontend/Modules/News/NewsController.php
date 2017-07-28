@@ -1,12 +1,15 @@
 <?php
 namespace App\Frontend\Modules\News;
 
-use \core\BackController;
-use \core\HTTPRequest;
-use \Entity\Comment;
-use \FormBuilder\CommentFormBuilder;
-use \core\FormHandler;
+use core\BackController;
+use core\FormHandler;
+use core\HTTPRequest;
+use Entity\Comment;
 use FormBuilder\CommentFormNewsBuilder;
+use Services\CommentsLevel;
+use Services\EditComment;
+
+
 
 class NewsController extends BackController
 {
@@ -32,7 +35,7 @@ class NewsController extends BackController
             if (strlen($news->contenu()) > $nombreCaracteres) {
                 $debut = substr($news->contenu(), 0, $nombreCaracteres);
                 $debut = substr($debut, 0, strrpos($debut, ' '))
-                         .' ... <a href="'.$url.'news-'.$news['id'].'.html">Voir la suite</a>';
+                    . ' ... <a href="' . $url . 'news-' . $news['id'] . '.html">Voir la suite</a>';
 
                 $news->setContenu($debut);
             }
@@ -40,7 +43,6 @@ class NewsController extends BackController
 
         // On ajoute la variable $listeNews à la vue.
         $this->page->addVar('listeNews', $listeNews);
-
 
     }
 
@@ -58,22 +60,10 @@ class NewsController extends BackController
 
         $comments = $this->managers->getManagerOf('Comments')->getListOf($news->id());
 
-        $comments_by_id = [];
+        $commentsLevel = new CommentsLevel();
+        $ShowCommentsLevel = $commentsLevel->getCommentsLevel($comments,false);
 
-
-        foreach ($comments as $comment) {
-            $comments_by_id[$comment->id()] = $comment;
-
-        }
-
-        foreach ($comments as $k => $comment) {
-
-            if ($comment->idParent() != 0) {
-                $comments_by_id[$comment->idParent()]->children[] = $comment;
-                unset($comments[$k]);
-            }
-        }
-        $this->page->addVar('comments', $comments);
+        $this->page->addVar('comments', $ShowCommentsLevel);
 
         $this->executeInsertComment($request);
     }
@@ -81,34 +71,19 @@ class NewsController extends BackController
     public function executeInsertComment(HTTPRequest $request)
     {
 
+
         // Si le formulaire a été envoyé.
         if ($request->method() == 'POST') {
 
             $depth = 0;
             $parent_id = isset($_POST['parent_id']) ? $_POST['parent_id'] : 0;
-            //$parent_id = isset($request->postData('id_parent')) ? $request->postData('id_parent') : 0;
-            if ($parent_id != 0) {
-                // var_dump($parent_id); die();
-                $repComments = $this->managers->getManagerOf('Comments')->findIdRep($parent_id);
-                if ($repComments == false) {
-                    throw new \Exception('Ce parent n\'exist pas');
-                }
-                $depth = $repComments->depth() + 1;
-            }
-            $comment = new Comment([
-                'news' => $request->getData('id'),
-                'auteur' => $request->postData('auteur'),
-                'contenu' => $request->postData('contenu'),
-                'idparent' => $parent_id,
-                'depth' => $depth,
-                'report' =>$request->postData('report') ,
-            ]);
-           // var_dump($comment);die;
+            $repComments = $this->managers->getManagerOf('Comments')->findIdRep($parent_id);
+            $insertComment = new EditComment();
+            $comment = $insertComment->InsertComment($request, $depth, $repComments, $parent_id);
 
         } else {
             $comment = new Comment;
         }
-
 
         $formBuilder = new CommentFormNewsBuilder($comment);
         $formBuilder->build();
@@ -118,7 +93,8 @@ class NewsController extends BackController
         $formHandler = new FormHandler($form, $this->managers->getManagerOf('Comments'), $request);
 
         if ($formHandler->process()) {
-            $this->app->user()->setFlash('Le commentaire a bien été ajouté, merci !');
+            //$this->app->user()->setFlash('flash','Le commentaire a bien été ajouté, merci !');
+            $this->app->user()->setFlash('Le commentaire a bien été ajouté, merci !', 'success');
 
             $this->app->httpResponse()->redirect('news-' . $request->getData('id') . '.html');
         }
@@ -132,9 +108,10 @@ class NewsController extends BackController
     {
         $this->managers->getManagerOf('Comments')->report($request->getData('id'));
 
-        $this->app->user()->setFlash('Le commentaire a bien été signalé !');
+        // $this->app->user()->setFlash('flash','Le commentaire a bien été signalé !');
+        $this->app->user()->setFlash('Le commentaire a bien été signalé !', 'success');
 
-        $this->app->httpResponse()->redirect('news-'. $request->getData('slug') . '.html');
+        $this->app->httpResponse()->redirect('news-' . $request->getData('idNews') . '.html');
 
     }
 }

@@ -23,6 +23,7 @@ class ConnexionController extends BackController
       else
       {
         $this->app->user()->setFlash('Le pseudo ou le mot de passe est incorrect.');
+         // $this->app->user()->setFlash('Err','Le pseudo ou le mot de passe est incorrect.');
       }
     }
   }

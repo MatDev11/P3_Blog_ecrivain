@@ -4,5 +4,5 @@
   <route url="/Blog_Billet_simple_pour_l_Alaska/web/" module="News" action="index" />
   <route url="/Blog_Billet_simple_pour_l_Alaska/web/news-([0-9]+)\.html" module="News" action="show" vars="id"/>
   <route url="/Blog_Billet_simple_pour_l_Alaska/web/commenter-([0-9]+)\.html" module="News" action="insertComment" vars="news" />
-  <route url="/Blog_Billet_simple_pour_l_Alaska/web/comment-report-([0-9]+)\.html" module="News" action="reportComment" vars="id" />
+  <route url="/Blog_Billet_simple_pour_l_Alaska/web/comment-report-([0-9]+)-([0-9]+)\.html" module="News" action="reportComment" vars="id,idNews" />
 </routes>

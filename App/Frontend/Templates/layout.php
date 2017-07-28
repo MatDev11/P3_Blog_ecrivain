@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> </title>
+    <title></title>
     <!-- Bootstrap Core CSS
       <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 
@@ -56,22 +56,23 @@
                 <span class="sr-only">Toggle navigation</span>
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/">Blog Billet simple pour l'Alaska</a>
+            <a class="navbar-brand" href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/">Blog Billet simple
+                pour l'Alaska</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="<?= $url; ?>">Acceuil</a>
+                    <a href="<?= $url; ?>">Accueil</a>
                 </li>
                 <li>
                     <a href="<?= $url; ?>admin/">Administration</a>
                 </li>
                 <?php if ($user->isAuthenticated()) { ?>
-                <li>
-                    <a href="<?= $url; ?>admin/disconect/">Déconnexion</a>
-                </li>
+                    <li>
+                        <a href="<?= $url; ?>admin/disconect/">Déconnexion</a>
+                    </li>
                 <?php } ?>
 
             </ul>
@@ -89,7 +90,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1><?=$titleSite?></h1>
+                    <h1><?= $titleSite ?></h1>
                     <hr class="small">
                     <span class="subheading">Jean Forteroche</span>
                 </div>
@@ -103,9 +104,7 @@
 <div class="container">
     <div class="row">
 
-        <?php if ($name ==='Backend') { ?>
-
-
+        <?php if ($name === 'Backend') { ?>
             <ul class="nav nav-tabs ">
 
                 <li>
@@ -121,7 +120,7 @@
             </ul>
 
         <?php } ?>
-        <?php if ($user->hasFlash()) echo '<p style="text-align: center;" class="alert alert-info">', $user->getFlash(), '</p>'; ?>
+        <?php if ($user->hasFlash()) $user->getFlash(); ?>
 
         <?= $content ?>
     </div>
@@ -135,7 +134,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                               <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
+                <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
             </div>
         </div>
     </div>

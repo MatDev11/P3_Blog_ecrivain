@@ -19,19 +19,11 @@ class NewsController extends BackController
         $this->managers->getManagerOf('News')->delete($newsId);
         $this->managers->getManagerOf('Comments')->deleteFromNews($newsId);
 
-        $this->app->user()->setFlash('La news a bien été supprimée !');
+        $this->app->user()->setFlash('La news a bien été supprimée !','success');
 
         $this->app->httpResponse()->redirect('.');
     }
 
-    public function executeDeleteComment(HTTPRequest $request)
-    {
-        $this->managers->getManagerOf('Comments')->delete($request->getData('id'));
-
-        $this->app->user()->setFlash('Le commentaire a bien été supprimé !');
-
-        $this->app->httpResponse()->redirect('.');
-    }
 
     public function executeIndex(HTTPRequest $request)
     {
@@ -55,41 +47,6 @@ class NewsController extends BackController
         $this->processForm($request);
 
         $this->page->addVar('title', 'Modification d\'un article');
-    }
-
-    public function executeUpdateComment(HTTPRequest $request)
-    {
-        $this->page->addVar('title', 'Modification d\'un commentaire');
-
-        if ($request->method() == 'POST')
-        {
-            $comment = new Comment([
-                'id' => $request->getData('id'),
-                'auteur' => $request->postData('auteur'),
-                'contenu' => $request->postData('contenu'),
-                'report' => $request->postData('report'),
-            ]);
-        }
-        else
-        {
-            $comment = $this->managers->getManagerOf('Comments')->get($request->getData('id'));
-        }
-
-        $formBuilder = new CommentFormBuilder($comment);
-        $formBuilder->build();
-
-        $form = $formBuilder->form();
-
-        $formHandler = new FormHandler($form, $this->managers->getManagerOf('Comments'), $request);
-
-        if ($formHandler->process())
-        {
-            $this->app->user()->setFlash('Le commentaire a bien été modifié');
-
-            $this->app->httpResponse()->redirect('.');
-        }
-
-        $this->page->addVar('form', $form->createView());
     }
 
     public function processForm(HTTPRequest $request)
@@ -129,7 +86,7 @@ class NewsController extends BackController
 
         if ($formHandler->process())
         {
-            $this->app->user()->setFlash($news->isNew() ? 'La news a bien été ajoutée !' : 'La news a bien été modifiée !');
+            $this->app->user()->setFlash($news->isNew() ? 'La news a bien été ajoutée !' : 'La news a bien été modifiée !','success');
 
             $this->app->httpResponse()->redirect('.');
         }

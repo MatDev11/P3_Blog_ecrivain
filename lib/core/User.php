@@ -10,13 +10,20 @@ class User
     return isset($_SESSION[$attr]) ? $_SESSION[$attr] : null;
   }
 
-  public function getFlash()
+    public function getFlash()
   {
-    $flash = $_SESSION['flash'];
+      ?>
+      <div style="text-align: center;" class="alert alert-<?=($_SESSION['flash']['type']); ?>">
+          <?=$flash =($_SESSION['flash']['value']);?>
+      </div>
+      <?php
+
     unset($_SESSION['flash']);
 
     return $flash;
   }
+
+
 
   public function hasFlash()
   {
@@ -43,9 +50,12 @@ class User
     $_SESSION['auth'] = $authenticated;
   }
 
-  public function setFlash($value)
+  public function setFlash($value,$type='danger')
   {
-    $_SESSION['flash'] = $value;
+    $_SESSION['flash'] =[
+        'value'=>$value,
+        'type'=>$type
+    ] ;
   }
 
     public function disconect()

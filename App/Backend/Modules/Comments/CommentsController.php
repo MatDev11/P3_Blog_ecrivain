@@ -6,6 +6,8 @@ use core\FormHandler;
 use core\HTTPRequest;
 use Entity\Comment;
 use FormBuilder\CommentFormBuilder;
+use Services\ChildrenIds;
+use Services\CommentsLevel;
 
 
 class CommentsController extends BackController
@@ -31,26 +33,17 @@ class CommentsController extends BackController
     {
         $comments = $this->managers->getManagerOf('Comments')->getListOf($_POST['news']);
 
-        $comments_by_id = [];
+        $commentsLevel = new CommentsLevel($comments);
+        $comments_by_id = $commentsLevel->getCommentsLevel($comments,true);
 
-        foreach ($comments as $comment) {
-            $comments_by_id[$comment->id()] = $comment;
-        }
-
-        foreach ($comments as $k => $comment) {
-
-            if ($comment->idParent() != 0) {
-                $comments_by_id[$comment->idParent()]->children[] = $comment;
-                unset($comments[$k]);
-            }
-        }
-
-        $ids = $this->getChildrenIds($comments_by_id[$_POST['id']]);
+        $childrenIds = new ChildrenIds();
+        $ids = $childrenIds->getChildrenIds($comments_by_id[$_POST['id']]);
         $ids[] = $_POST['id'];
+
 
         $this->managers->getManagerOf('Comments')->deleteWithChildren($ids);
 
-        $this->app->user()->setFlash('Le commentaire a bien été supprimé !');
+        $this->app->user()->setFlash('Le commentaire a bien été supprimé !','success');
 
         $this->app->httpResponse()->redirect('./comments/');
     }
@@ -95,7 +88,7 @@ class CommentsController extends BackController
         $formHandler = new FormHandler($form, $this->managers->getManagerOf('Comments'), $request);
 
         if ($formHandler->process()) {
-            $this->app->user()->setFlash('Le commentaire a bien été modifié');
+            $this->app->user()->setFlash('Le commentaire a bien été modifié','success');
 
             $this->app->httpResponse()->redirect('./comments/');
         }
