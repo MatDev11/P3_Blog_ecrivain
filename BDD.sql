@@ -34,7 +34,7 @@ CREATE TABLE `comments` (
   `id_parent` int(11) NOT NULL DEFAULT '0',
   `depth` int(11) NOT NULL DEFAULT '0',
   `report` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `comments`
@@ -60,7 +60,7 @@ CREATE TABLE `news` (
   `contenu` text NOT NULL,
   `dateAjout` datetime NOT NULL,
   `dateModif` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `news`

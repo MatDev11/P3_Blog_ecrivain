@@ -26,16 +26,17 @@
              
                 <td><a class="btn btn-info btn-xs" href="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/comment-update-<?= $comment['id']?>.html"><span class="glyphicon glyphicon-edit"></span></a>
 
-
-                <form action="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/comment-delete-<?= $comment['id']?>.html" method="post" style="display:inline-block">
-                    <input  type="hidden" name="id" value="<?= $comment['id']?>">
-                    <input type="hidden" name="id_parent" value="<?= $comment['id_prent']?>">
-
-                    <input  type="hidden" name="news" value="<?=$comment['news']?>">
-                    <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
-                </form>
+                    <form action="http://localhost/Blog_Billet_simple_pour_l_Alaska/web/admin/comment-delete-<?= $comment['id'] ?>.html"
+                          method="post" style="display:inline-block">
+                        <input type="hidden" name="id" value="<?= $comment['id'] ?>">
+                        <input type="hidden" name="id_parent" value="<?= $comment['id_prent'] ?>">
+                        <input type="hidden" name="token" id="token" value="<?= $token; ?>"/>
+                        <input type="hidden" name="news" value="<?= $comment['news'] ?>">
+                        <button type="submit"  class="btn btn-danger delet"><span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </form>
             </td>
-                            </tr>
+        </tr>
    <?php
     }
     ?>

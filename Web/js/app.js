@@ -19,6 +19,7 @@ $(document).ready(function () {
         $comment.after($form)
     })
 
+
     /*
     *pagination
     */
@@ -40,8 +41,15 @@ $(document).ready(function () {
     $('#paging').bootstrapPaginator(options);
 
 
-
 })
+
+$('.delet').click(function() {
+
+    if(confirm("Etes-vous sur de vouloir  supprimer ?")) document.location.href = url;
+
+    return false;
+
+} );
 
 
 tinymce.init({ selector:'textarea#editable',

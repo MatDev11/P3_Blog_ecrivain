@@ -4,22 +4,29 @@ namespace App\Backend\Modules\News;
 use \core\BackController;
 use \core\HTTPRequest;
 use \Entity\News;
-use \Entity\Comment;
-use \FormBuilder\CommentFormBuilder;
 use \FormBuilder\NewsFormBuilder;
 use \core\FormHandler;
+use Services\csrf;
 
 class NewsController extends BackController
 {
     public function executeDelete(HTTPRequest $request)
     {
-        $newsId = $request->getData('id');
 
+        $csrf = new csrf();
 
-        $this->managers->getManagerOf('News')->delete($newsId);
-        $this->managers->getManagerOf('Comments')->deleteFromNews($newsId);
+        if ($csrf->getCsrf() == true) {
 
-        $this->app->user()->setFlash('La news a bien été supprimée !','success');
+            $newsId = $request->getData('id');
+          //  $this->managers->getManagerOf('News')->delete($newsId);
+          //  $this->managers->getManagerOf('Comments')->deleteFromNews($newsId);
+
+            $this->app->user()->setFlash('La news a bien été supprimée !', 'success');
+        }
+        else
+        {
+            $this->app->user()->setFlash('La news n\'a pas été supprimée !', 'danger');
+        }
 
         $this->app->httpResponse()->redirect('.');
     }
@@ -27,6 +34,8 @@ class NewsController extends BackController
 
     public function executeIndex(HTTPRequest $request)
     {
+        $token=$this->app->user()->getToken();
+        $this->page->addVar('token', $token);
         $this->page->addVar('title', 'Gestion des Articles');
 
         $manager = $this->managers->getManagerOf('News');

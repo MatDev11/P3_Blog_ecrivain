@@ -8,6 +8,7 @@ use Entity\Comment;
 use FormBuilder\CommentFormBuilder;
 use Services\ChildrenIds;
 use Services\CommentsLevel;
+use Services\csrf;
 
 
 class CommentsController extends BackController
@@ -31,25 +32,39 @@ class CommentsController extends BackController
 
     public function executeDeleteComment(HTTPRequest $request)
     {
-        $comments = $this->managers->getManagerOf('Comments')->getListOf($_POST['news']);
+        $csrf = new csrf();
 
-        $commentsLevel = new CommentsLevel($comments);
-        $comments_by_id = $commentsLevel->getCommentsLevel($comments,true);
+        if ($csrf->getCsrf() == true) {
+            $comments = $this->managers->getManagerOf('Comments')->getListOf($_POST['news']);
 
-        $childrenIds = new ChildrenIds();
-        $ids = $childrenIds->getChildrenIds($comments_by_id[$_POST['id']]);
-        $ids[] = $_POST['id'];
+            $commentsLevel = new CommentsLevel($comments);
+            $comments_by_id = $commentsLevel->getCommentsLevel($comments, true);
+
+            $childrenIds = new ChildrenIds();
+            $ids = $childrenIds->getChildrenIds($comments_by_id[$_POST['id']]);
+            $ids[] = $_POST['id'];
+
+             $this->managers->getManagerOf('Comments')->deleteWithChildren($ids);
+
+            $this->app->user()->setFlash('Le commentaire a bien été supprimé !', 'success');
+
+        }
+        else {
+
+            $this->app->user()->setFlash('Le commentaire n\'a pas été supprimé !', 'danger');
+        }
+            $this->app->httpResponse()->redirect('./comments/');
 
 
-        $this->managers->getManagerOf('Comments')->deleteWithChildren($ids);
-
-        $this->app->user()->setFlash('Le commentaire a bien été supprimé !','success');
-
-        $this->app->httpResponse()->redirect('./comments/');
     }
 
     public function executeIndex(HTTPRequest $request)
     {
+        $token = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
+
+        $_SESSION['token'] = $token;
+        $this->page->addVar('token', $token);
+
         $this->page->addVar('title', 'Gestion des commentaires');
 
         $manager = $this->managers->getManagerOf('Comments');
@@ -67,15 +82,27 @@ class CommentsController extends BackController
 
     public function executeUpdateComment(HTTPRequest $request)
     {
+
+
+        $this->page->addVar('token',  $_SESSION['token']);
+
+
         $this->page->addVar('title', 'Modification d\'un commentaire');
 
         if ($request->method() == 'POST') {
-            $comment = new Comment([
-                'id' => $request->getData('id'),
-                'auteur' => $request->postData('auteur'),
-                'report' => $request->postData('report'),
-                'contenu' => $request->postData('contenu')
-            ]);
+            $csrf = new csrf();
+            if ($csrf->getCsrf() == true) {
+                $comment = new Comment([
+                    'id' => $request->getData('id'),
+                    'auteur' => $request->postData('auteur'),
+                    'report' => $request->postData('report'),
+                    'contenu' => $request->postData('contenu')
+                ]);
+            }
+            else {
+                $this->app->user()->setFlash('Le commentaire n\'a pas été supprimé !', 'danger');
+                $this->app->httpResponse()->redirect('./comment-update-'.$request->getData('id').'.html');
+                }
         } else {
             $comment = $this->managers->getManagerOf('Comments')->get($request->getData('id'));
         }
@@ -88,7 +115,7 @@ class CommentsController extends BackController
         $formHandler = new FormHandler($form, $this->managers->getManagerOf('Comments'), $request);
 
         if ($formHandler->process()) {
-            $this->app->user()->setFlash('Le commentaire a bien été modifié','success');
+            $this->app->user()->setFlash('Le commentaire a bien été modifié', 'success');
 
             $this->app->httpResponse()->redirect('./comments/');
         }
