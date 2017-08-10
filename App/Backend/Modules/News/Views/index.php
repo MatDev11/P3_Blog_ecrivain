@@ -31,7 +31,7 @@
                           method="post" style="display:inline-block">
 
 
-                        <input type="hidden" name="token" id="token" value="<?= $token; ?>"/>
+                        <input type="hidden" name="token"  value="<?= $token; ?>"/>
 
                         <button type="submit"  class="btn btn-danger delet"><span class="glyphicon glyphicon-remove"></span>
                         </button>

@@ -15,9 +15,12 @@ class csrf
     {
         $csrf = false;
 
+       // $token=$this->app->user()->getToken();
+       // var_dump($_SESSION['token'],$_POST['token']);die();
+
         if (isset($_SESSION['token']) AND isset($_POST['token']) AND !empty($_SESSION['token']) AND !empty($_POST['token'])) {
 
-            //($_SESSION['token'],$_POST['token']);die();
+
 
             if ($_SESSION['token'] == $_POST['token']) {
 

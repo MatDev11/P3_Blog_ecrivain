@@ -14,22 +14,6 @@ use Services\csrf;
 class CommentsController extends BackController
 {
 
-
-    private function getChildrenIds($comment)
-    {
-
-        if (isset($comment->children)) {
-            $ids = [];
-            foreach ($comment->children as $child) {
-                $ids[] = $child->id();
-                if (isset($child->children)) {
-                    $ids = array_merge($ids, $this->getChildrenIds($child));
-                }
-            }
-            return $ids;
-        }
-    }
-
     public function executeDeleteComment(HTTPRequest $request)
     {
         $csrf = new csrf();
@@ -44,51 +28,39 @@ class CommentsController extends BackController
             $ids = $childrenIds->getChildrenIds($comments_by_id[$_POST['id']]);
             $ids[] = $_POST['id'];
 
-             $this->managers->getManagerOf('Comments')->deleteWithChildren($ids);
+            $this->managers->getManagerOf('Comments')->deleteWithChildren($ids);
 
             $this->app->user()->setFlash('Le commentaire a bien été supprimé !', 'success');
 
-        }
-        else {
+        } else {
 
             $this->app->user()->setFlash('Le commentaire n\'a pas été supprimé !', 'danger');
         }
-            $this->app->httpResponse()->redirect('./comments/');
-
+        $this->app->httpResponse()->redirect('./comments/');
 
     }
 
     public function executeIndex(HTTPRequest $request)
     {
-        $token = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
 
-        $_SESSION['token'] = $token;
+        $token = $this->app->user()->getToken();
         $this->page->addVar('token', $token);
-
         $this->page->addVar('title', 'Gestion des commentaires');
-
         $manager = $this->managers->getManagerOf('Comments');
-
         $this->page->addVar('listeComments', $manager->getList());
         $this->page->addVar('nombreComments', $manager->count());
     }
 
-    public function executeInsert(HTTPRequest $request)
-    {
-        $this->processForm($request);
-
-        $this->page->addVar('title', 'Ajout d\'un');
-    }
-
     public function executeUpdateComment(HTTPRequest $request)
     {
-
-
-        $this->page->addVar('token',  $_SESSION['token']);
-
-
+        $this->processForm($request);
+        $token = $this->app->user()->getToken();
+        $this->page->addVar('token', $token);
         $this->page->addVar('title', 'Modification d\'un commentaire');
+    }
 
+    public function processForm(HTTPRequest $request)
+    {
         if ($request->method() == 'POST') {
             $csrf = new csrf();
             if ($csrf->getCsrf() == true) {
@@ -98,11 +70,10 @@ class CommentsController extends BackController
                     'report' => $request->postData('report'),
                     'contenu' => $request->postData('contenu')
                 ]);
-            }
-            else {
+            } else {
                 $this->app->user()->setFlash('Le commentaire n\'a pas été supprimé !', 'danger');
-                $this->app->httpResponse()->redirect('./comment-update-'.$request->getData('id').'.html');
-                }
+                $this->app->httpResponse()->redirect('./comment-update-' . $request->getData('id') . '.html');
+            }
         } else {
             $comment = $this->managers->getManagerOf('Comments')->get($request->getData('id'));
         }
@@ -119,7 +90,6 @@ class CommentsController extends BackController
 
             $this->app->httpResponse()->redirect('./comments/');
         }
-
         $this->page->addVar('form', $form->createView());
     }
 
